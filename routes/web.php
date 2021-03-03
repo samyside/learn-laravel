@@ -74,6 +74,9 @@ Route::get('test/sum/{num1}/{num2}', 'Test@sum')->where([
 Route::get('pages/show/{param?}', 'Page@showOne')->where('param', '[0-9]+');
 Route::get('pages/all', 'Page@showAll');
 
+// Lesson 5
+Route::get('color/{color?}/{output?}', 'Color@showColor');
+
 // Employee
 Route::get('employee/{id}', 'Employee@showOne')->where('id', '[0-9]+');
 Route::get('employee/{id}/{param}', 'Employee@showField')->where(
@@ -81,3 +84,12 @@ Route::get('employee/{id}/{param}', 'Employee@showField')->where(
 		'id' => '[0-9]+',
 		'param' => '[a-z]{4,}'
 	]);
+
+Route::get('employee/{name}/{age}', 'Employee@aboutEmployee')
+	->where([
+		'name' => '[a-z]+',
+		'age' => '[0-9]+'
+	]);
+
+// Lesson 06. If(){} in Blade
+Route::get('lesson-6/age/{age?}', 'Lesson06.If@if');

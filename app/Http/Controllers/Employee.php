@@ -8,23 +8,23 @@ class Employee extends Controller {
 	public function __construct() {
 		$this->employees = [
 			1 => [
-				'name' => 'user1',
-				'surname' => 'surname1',
+				'name' => 'Steve',
+				'surname' => 'Clark',
 				'salary' => 1000
 			],
 			2 => [
-				'name' => 'user1',
-				'surname' => 'surname1',
-				'salary' => 1000
+				'name' => 'Bob',
+				'surname' => 'Harrison',
+				'salary' => 2500
 			],
 			3 => [
-				'name' => 'user1',
-				'surname' => 'surname1',
-				'salary' => 1000
+				'name' => 'Alice',
+				'surname' => 'Elson',
+				'salary' => 5000
 			],
 			4 => [
-				'name' => 'user4',
-				'surname' => 'surname4',
+				'name' => 'Rocky',
+				'surname' => 'Stallone',
 				'salary' => 4000
 			]
 		];
@@ -53,5 +53,16 @@ class Employee extends Controller {
 			}
 		}
 		return 'Error: Employee not found';
+	}
+
+	public function aboutEmployee($name, $age) {
+		if (!isset($name) || !isset($age)) {
+			return 'Error! Wrong some input value (or values)';
+		}
+		return view('about-employee', 
+			[
+				'name' => $name,
+				'age' => $age
+			]);
 	}
 }
