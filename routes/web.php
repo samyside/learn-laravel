@@ -93,3 +93,11 @@ Route::get('employee/{name}/{age}', 'Employee@aboutEmployee')
 
 // Lesson 06. If(){} in Blade
 Route::get('lesson-6/age/{age?}', 'Lesson06.If@if');
+
+Route::get('blade/', function() {
+	return view('child');
+});
+
+Route::get('application', function() {
+	return view('sections.templates');
+});
