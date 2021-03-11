@@ -92,7 +92,7 @@ Route::get('employee/{name}/{age}', 'Employee@aboutEmployee')
 	]);
 
 // Lesson 06. If(){} in Blade
-Route::get('lesson-6/age/{age?}', 'Lesson06.If@if');
+Route::get('lesson-6/age/{age?}', 'lesson06/if@check');
 
 Route::get('blade/', function() {
 	return view('child');
@@ -101,3 +101,7 @@ Route::get('blade/', function() {
 Route::get('application', function() {
 	return view('sections.templates');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
